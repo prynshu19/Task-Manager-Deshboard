@@ -427,7 +427,7 @@ section {
   gap: 1rem;
   border: 2px dashed #cfcfcf;
   border-radius: 1rem;
-  color: black;
+  color: var(--text);
 }
 
 .empty-state i {
