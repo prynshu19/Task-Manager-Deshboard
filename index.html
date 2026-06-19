@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favi_icon.png" type="image/x-icon">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./assets/images/logo.png" alt="">
+                <p>Task Manager</p>
+            </div>
+            <div class="search-task">
+                <input type="text" id="search-input" placeholder="Search Task...">
+                <i class="ri-search-line" id="search-button"></i>
+            </div>
+            <div class="profile">
+                <img src="./assets/images/user_profile.png" alt="">
+                <p class="name"></p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="heading">
+                <div class="heading-text">
+                    <h1>Dashboard</h1>
+                    <p>Plan, prioritize and accomplish you tasks with ease. </p>
+                </div>
+                <div class="heading-btns">
+                    <button class="add mobile btn">
+                        Add Task</button>
+                    <button class="clean mobile btn">Clean Task</button>
+
+                    <button class="add desktop btn">
+                        <i class="ri-add-large-line"></i></button>
+                    <button class="clean desktop btn"><i class="ri-close-large-line"></i></button>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="total-task task-counter">
+                    <div class="task-name">
+                        <p>Total Tasks</p>
+                        <i class="ri-arrow-right-up-line"></i>
+                    </div>
+                    <div class="task-number">
+                        <h2 class="total-count">24</h2>
+                    </div>
+                    <div class="task-des ">
+                        <p>On Discuss</p>
+                    </div>
+                </div>
+                <div class="pending-task  task-counter">
+                    <div class="task-name">
+                        <p>Pending Tasks</p>
+                        <i class="ri-arrow-right-up-line"></i>
+                    </div>
+                    <div class="task-number">
+                        <h2 class="pending-count">24</h2>
+                    </div>
+                    <div class="task-des">
+                        <p>Click Here to Check Pending Tasks</p>
+                    </div>
+                </div>
+                <div class="completed-task task-counter">
+                    <div class="task-name">
+                        <p>Finished Tasks</p>
+                        <i class="ri-arrow-right-up-line"></i>
+                    </div>
+                    <div class="task-number">
+                        <h2 class="finished-count">24</h2>
+                    </div>
+                    <div class="task-des">
+                        <p>Click Here to Check Finished Tasks</p>
+                    </div>
+                </div>
+            </div>
+            <div class="task-container">
+                <div class="task-text">
+                    <h3 class="tell-task">All Task</h3>
+                    <i class="ri-calendar-todo-line"></i>
+                </div>
+                <div class="cards">
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="start-div">
+        <div class="start-form-div">
+            <h2>Enter Your Name to start...</h2>
+            <input type="text" id="user-name" placeholder="Enter your name...">
+            <button id="start-btn">Start</button>
+        </div>
+    </div>
+
+    <div class="add-task">
+        <div class="remove-form">
+            <div></div>
+            <div><i class="ri-close-large-line close"></i></div>
+        </div>
+        <form class="task-form">
+            <h1 class="task-form-h1">Create Task</h1>
+
+            <input type="text" id="name" placeholder="Enter Task..." />
+
+            <div class="form-group">
+                <label for="start">Starting Date</label>
+                <input id="start" type="date" />
+            </div>
+
+            <div class="form-group">
+                <label for="end">End Date</label>
+                <input id="end" type="date" />
+            </div>
+
+            <div class="form-group">
+                <label for="project">Task Type</label>
+                <select id="project">
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>Study</option>
+                    <option>Health</option>
+                </select>
+            </div>
+
+            <button class="task-submit" type="submit">Create Task</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

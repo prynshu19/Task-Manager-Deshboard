@@ -1,0 +1,34 @@
+@media (min-width: 768px) {
+  .logo p {
+    display: block;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-task i {
+    display: block;
+  }
+
+  .task-name i {
+    display: block;
+  }
+
+  .task-card {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-template-areas: "total pending completed ";
+    gap: clamp(0.5rem, 0.5rem + 2vw, 1rem);
+  }
+
+  .mobile{
+    display: block;
+  }
+
+  .desktop{
+    display: none;
+  }
+}
