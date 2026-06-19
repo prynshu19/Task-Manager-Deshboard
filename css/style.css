@@ -1,6 +1,12 @@
 :root {
   --primary-clr: #1a6542;
   --bg-clr: rgba(128, 128, 128, 0.416);
+  --text: black;
+}
+
+body[data-theme="dark"] {
+  --bg-clr: #000;
+  --text: white;
 }
 
 .start-div {
@@ -102,6 +108,15 @@ nav {
   color: var(--primary-clr);
 }
 
+#theme-btn {
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--text);
+}
+
 .search-task {
   width: 40%;
   display: flex;
@@ -158,6 +173,7 @@ section {
 
 .heading-text h1 {
   font-size: clamp(2rem, 2rem + 1vw, 4rem);
+  color: var(--text);
 }
 
 .heading-text p {

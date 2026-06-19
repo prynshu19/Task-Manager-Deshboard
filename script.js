@@ -22,6 +22,7 @@ const finishedCount = doc.querySelector(".finished-count");
 const pendingCount = doc.querySelector(".pending-count");
 const searchInput = doc.querySelector("#search-input");
 const searchBtn = doc.querySelector("#search-button");
+const themeBtn = doc.querySelector("#theme-btn");
 
 let userName = localStorage.getItem("userName" || null);
 
@@ -34,6 +35,18 @@ let pendingTasks = JSON.parse(localStorage.getItem("pendingTasks")) || [];
 let editTaskId = null;
 
 let taskView = localStorage.getItem("taskView") || "all";
+
+let theme = localStorage.getItem("theme") || "light";
+
+if (theme) {
+  body.setAttribute("data-theme", theme);
+
+  if (theme === "dark") {
+    themeBtn.innerHTML = '<i class="ri-sun-fill"></i>';
+  } else {
+    themeBtn.innerHTML = '<i class="ri-moon-fill"></i>';
+  }
+}
 
 if (userName === null) startDiv.style.display = "flex";
 else {
@@ -136,10 +149,11 @@ function showAllTasks() {
                             <p>${ele.task} <span>(Due Date: ${ele.dueDate})</span></p>
                         </div>
                         <div class="tasks-btn">
-                           
+                            <button onclick="editTask(${ele.taskId})" class="edit mobile btn">Edit</button>
                             <button onclick="dltTask(${ele.taskId})" class="dlt mobile btn">Delete</button>
 
-                           
+                            <button onclick="editTask(${ele.taskId})" class="edit desktop btn">
+                                <i class="ri-edit-box-line"></i></button>
                             <button onclick="dltTask(${ele.taskId})"  class="dlt desktop btn"><i class="ri-close-large-line"></i></button>
                         </div>
                     </div>
@@ -428,3 +442,26 @@ searchInput.addEventListener("keypress", (e) => {
     searchInput.value = "";
   }
 });
+
+themeBtn.addEventListener("click", () => {
+  if (body.getAttribute("data-theme") === "light") {
+    body.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    themeBtn.innerHTML = '<i class="ri-sun-fill"></i>';
+  } else {
+    body.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    themeBtn.innerHTML = '<i class="ri-moon-fill"></i>';
+  }
+});
+
+/*Difference Between input.value and input.getAttribute("value")
+
+1. input.value
+   - Returns the current value of the input field.
+   - If the user types something in input or JavaScript changes the value,
+     input.value reflects the updated value.
+
+2. input.getAttribute("value")
+   - Returns the initial value written in the HTML attribute.
+   - It does not change when the user changes the input field.*/
