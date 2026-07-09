@@ -91,18 +91,25 @@ nav {
   color: var(--primary-clr);
 }
 
-.profile {
+.profile{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: clamp(0.5rem, 0.5rem + 1vw, 1.5rem);
 }
 
-.profile img {
+.profile1 img {
   width: clamp(3rem, 3rem + 3vw, 5rem);
 }
 
-.profile p {
+.profile1 p {
   font-size: clamp(1.2rem, 1rem + 0.5vw, 2rem);
   font-weight: 600;
   color: var(--primary-clr);
@@ -188,6 +195,10 @@ section {
 }
 
 .mobile {
+  display: block;
+}
+
+.desktop {
   display: none;
 }
 

@@ -5,9 +5,11 @@ const startBtn = doc.querySelector("#start-btn");
 const userNameHeading = doc.querySelector(".name");
 const startDiv = doc.querySelector(".start-div");
 const addBtn = doc.querySelector(".add");
+const addMobBtn = doc.querySelector("#add-mob");
 const addTaskForm = doc.querySelector(".add-task");
 const closeTaskForm = doc.querySelector(".close");
 const cleanAllTasks = doc.querySelector(".clean");
+const cleanAllMobTasks = doc.querySelector("#clean-mob");
 const taskForm = doc.querySelector(".task-form");
 const submitTask = doc.querySelector(".task-submit");
 const cardContainer = doc.querySelector(".cards");
@@ -308,6 +310,11 @@ addBtn.addEventListener("click", () => {
   taskForm[0].focus();
 });
 
+addMobBtn.addEventListener("click", () => {
+  addTaskForm.style.display = "flex";
+  taskForm[0].focus();
+});
+
 closeTaskForm.addEventListener("click", () => {
   addTaskForm.style.display = "none";
   taskForm[0].value = "";
@@ -317,6 +324,16 @@ closeTaskForm.addEventListener("click", () => {
 });
 
 cleanAllTasks.addEventListener("click", () => {
+  localStorage.removeItem("taskArr");
+  localStorage.removeItem("finishedTasks");
+  localStorage.removeItem("pendingTasks");
+  tasksArr = [];
+  filterTasks = [];
+  pendingTasks = [];
+  taskCounter();
+});
+
+cleanAllMobTasks.addEventListener("click", () => {
   localStorage.removeItem("taskArr");
   localStorage.removeItem("finishedTasks");
   localStorage.removeItem("pendingTasks");

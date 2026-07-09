@@ -24,11 +24,11 @@
     gap: clamp(0.5rem, 0.5rem + 2vw, 1rem);
   }
 
-  .mobile{
-    display: block;
+  .mobile {
+    display: none;
   }
 
-  .desktop{
-    display: none;
+  .desktop {
+    display: block;
   }
 }
